@@ -1,0 +1,280 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Task Manager</title>  
+  <style>  
+    /* Reset */  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+      font-family: Arial, sans-serif;  
+    }  body {  
+  background: linear-gradient(135deg, #6a11cb, #2575fc);  
+  color: #333;  
+  min-height: 100vh;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center; /* ⬅ centered vertically */  
+  padding: 20px;  
+}  
+
+.container {  
+  background:#fff ;  
+  width: 100%;  
+  max-width: 800px;   
+  padding: 30px;  
+  border-radius: 12px;  
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);  
+  text-align: center;  
+}  
+
+header {  
+  margin-bottom: 20px;  
+}  
+
+nav {  
+  display: flex;  
+  justify-content: space-around;  
+  margin-bottom: 20px;  
+  flex-wrap: wrap;  
+}  
+
+nav a {  
+  text-decoration: none;  
+  color: #2575fc;  
+  font-weight: bold;  
+  padding: 8px 14px;  
+  border-radius: 6px;  
+  transition: background 0.3s, color 0.3s;  
+}  
+
+nav a:hover, nav a.active {  
+  background: #2575fc;  
+  color: #fff;  
+}  
+
+section {  
+  display: none;  
+  text-align: left;  
+}  
+
+section.active {  
+  display: block;  
+}  
+
+h1, h2 {  
+  color: #2d3e50;  
+  text-align: center;  
+  margin-bottom: 15px;  
+}  
+
+/* Task Form */  
+form {  
+  display: flex;  
+  margin-bottom: 15px;  
+}  
+
+form input {  
+  flex: 1;  
+  padding: 12px;  
+  border: 2px solid #ccc;  
+  border-radius: 8px 0 0 8px;  
+  outline: none;  
+}  
+
+form button {  
+  padding: 12px 20px;  
+  border: none;  
+  background: #4CAF50;  
+  color: white;  
+  font-weight: bold;  
+  cursor: pointer;  
+  border-radius: 0 8px 8px 0;  
+  transition: background 0.3s;  
+}  
+
+form button:hover {  
+  background: #45a049;  
+}  
+
+/* Task List */  
+ul {  
+  list-style: none;  
+  padding: 0;  
+}  
+
+ul li {  
+  background: #f9f9f9;  
+  padding: 14px;  
+  margin-bottom: 12px;  
+  border-radius: 8px;  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+  border: 1px solid #ddd;  
+}  
+
+.task-text {  
+  flex: 1;  
+}  
+
+.completed {  
+  text-decoration: line-through;  
+  color: gray;  
+}  
+
+.actions button {  
+  margin-left: 8px;  
+  padding: 6px 12px;  
+  border: none;  
+  border-radius: 6px;  
+  cursor: pointer;  
+  font-size: 14px;  
+}  
+
+.complete-btn {  
+  background: #2196F3;  
+  color: white;  
+}  
+
+.delete-btn {  
+  background: #f44336;  
+  color: white;  
+}  
+
+/* Responsive */  
+@media (max-width: 600px) {  
+  .container {  
+    max-width: 100%;  
+    padding: 20px; /* ⬅ fixed from 100px */  
+  }  
+
+  nav {  
+    flex-direction: column;  
+    align-items: center;  
+  }  
+
+  nav a {  
+    margin-bottom: 8px;  
+  }  
+
+  form {  
+    flex-direction: column;  
+  }  
+
+  form input, form button {  
+    border-radius: 8px;  
+    margin-bottom: 10px;  
+    width: 100%;  
+  }  
+}
+
+  </style>  
+</head>  
+<body>  
+  <div class="container">  
+    <header>  
+      <h1>Task Manager</h1>  
+      <nav>  
+        <a href="#" class="active" data-section="home">Home</a>  
+        <a href="#" data-section="tasks">Tasks</a>  
+        <a href="#" data-section="about">About</a>  
+        <a href="#" data-section="contact">Contact</a>  
+      </nav>  
+    </header>  <main>  
+  <section id="home" class="active">  
+    <h2>Welcome</h2>  
+    <p>Manage your tasks easily and stay productive!</p>  
+  </section>  
+
+  <section id="tasks">  
+    <h2>My Tasks</h2>  
+    <form id="task-form">  
+      <input type="text" id="task-input" placeholder="Enter a new task..." required>  
+      <button type="submit">Add</button>  
+    </form>  
+    <ul id="task-list"></ul>  
+  </section>  
+
+  <section id="about">  
+    <h2>About</h2>  
+    <p>This is a simple task management app to help you organize your daily work.</p>  
+  </section>  
+
+  <section id="contact">  
+    <h2>Contact</h2>  
+   <p><strong>Email:</strong> nifemiadeogun331@gmail.com</p>
+      <p><strong>Phone:</strong> +234 806 4625 645</p>
+      <p><strong>Address:</strong> Lagos, Nigeria</p>
+  </section>  
+</main>
+
+  </div>    <script>  
+    // Navigation  
+    const navLinks = document.querySelectorAll("nav a");  
+    const sections = document.querySelectorAll("section");  
+  
+    navLinks.forEach(link => {  
+      link.addEventListener("click", (e) => {  
+        e.preventDefault();  
+  
+        navLinks.forEach(l => l.classList.remove("active"));  
+        link.classList.add("active");  
+  
+        sections.forEach(section => {  
+          section.classList.remove("active");  
+          if (section.id === link.dataset.section) {  
+            section.classList.add("active");  
+          }  
+        });  
+      });  
+    });  
+  
+    // Task management  
+    const form = document.getElementById('task-form');  
+    const taskInput = document.getElementById('task-input');  
+    const taskList = document.getElementById('task-list');  
+  
+    form.addEventListener('submit', function(e) {  
+      e.preventDefault();  
+      const taskText = taskInput.value.trim();  
+      if (taskText !== "") {  
+        addTask(taskText);  
+        taskInput.value = "";  
+      }  
+    });  
+  
+    function addTask(text) {  
+      const li = document.createElement('li');  
+      const span = document.createElement('span');  
+      span.textContent = text;  
+      span.classList.add("task-text");  
+  
+      const actions = document.createElement('div');  
+      actions.classList.add("actions");  
+  
+      const completeBtn = document.createElement('button');  
+      completeBtn.textContent = "Complete";  
+      completeBtn.classList.add("complete-btn");  
+      completeBtn.onclick = function() {  
+        span.classList.toggle("completed");  
+      };  
+  
+      const deleteBtn = document.createElement('button');  
+      deleteBtn.textContent = "Delete";  
+      deleteBtn.classList.add("delete-btn");  
+      deleteBtn.onclick = function() {  
+        li.remove();  
+      };  
+  
+      actions.appendChild(completeBtn);  
+      actions.appendChild(deleteBtn);  
+  
+      li.appendChild(span);  
+      li.appendChild(actions);  
+      taskList.appendChild(li);  
+    }  
+  </script>  </body>  
+</html>
