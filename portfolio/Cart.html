@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrabNGo</title>
+  <style>
+        :root {
+            --primary-color: #f71111;
+            --secondary-color: #6f42c1;
+            --dark-color: #2339ff;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+        }
+      a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            animation: slidein 3s ease-out forwards;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+            animation: slidein 3s ease-out forwards;
+        }
+    .app-buttons {
+  display: flex;          
+  align-items: center;      
+  gap: 15px;                
+  margin-top: 20px;
+}
+
+.app-buttons img {
+  height: 55px;             
+  transition: transform 0.2s ease;
+}
+
+.app-buttons img:hover {
+  transform: scale(1.05);
+}
+body {
+    background: linear-gradient(180deg,#fff5e6,orange);
+    margin: 0;
+    align-content: center;
+    align-items: center;
+  line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav a {
+color: rgb(248, 3, 3);
+margin: 0;
+text-align: center;
+flex-wrap: wrap;
+}
+header {
+   text-align: center;
+  padding: 20px;
+  background-color: orange;
+  color: white;
+  animation: slideright 1.5s ease backwards;
+}
+@keyframes slidein{
+  from{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideright{
+  from{
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+nav :hover {
+    color: #a72828;
+}
+nav {
+      display: flex;
+                justify-content: space-around;
+                background:linear-gradient(180deg,#fff5e6,orange);
+    margin: 0;
+                font-size: large;
+                border-radius:10px;
+}     :root {
+            --primary-color: #f71111;
+            --secondary-color: #6f42c1;
+            --dark-color: #2339ff;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+        }
+      a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            animation: slidein 3s ease-out forwards;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+            animation: slidein 3s ease-out forwards;
+        }
+    .app-buttons {
+  display: flex;          
+  align-items: center;      
+  gap: 15px;                
+  margin-top: 20px;
+}
+
+.app-buttons img {
+  height: 55px;             
+  transition: transform 0.2s ease;
+}
+
+.app-buttons img:hover {
+  transform: scale(1.05);
+}
+body {
+    background: linear-gradient(180deg,#fff5e6,orange);
+    margin: 0;
+    align-content: center;
+    align-items: center;
+  line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav a {
+color: rgb(248, 3, 3);
+margin: 0;
+text-align: center;
+flex-wrap: wrap;
+}
+header {
+   text-align: center;
+  padding: 20px;
+  background-color: orange;
+  color: white;
+  animation: slideright 1.5s ease backwards;
+}
+@keyframes slidein{
+  from{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideright{
+  from{
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+nav :hover {
+    color: #a72828;
+}
+nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: linear-gradient(180deg, #fff5e6, orange);
+      font-size: large;
+      border-radius: 10px;
+      padding: 10px;
+      gap: 1rem;
+       position: sticky;
+      top: 0;
+}
+  </style>  
+</head>
+<body>
+     <header>
+    <a href="#" class="logo">Grab<span>NGo</span></a>
+  </header>
+  <nav>
+    <a href="index5.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="Cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <h1 style="text-align: center; margin-top: 50px;">Your Cart is Empty!</h1>
+  <p style="text-align: center;">Browse our <a href="menu.html">menu</a> to add delicious items to your cart.</p>
+</body>
+</html>

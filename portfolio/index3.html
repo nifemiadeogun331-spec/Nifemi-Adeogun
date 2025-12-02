@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Travel Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('https://picsum.photos/1200/500?travel') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    nav {
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin: 40px 0 20px;
+      text-align: center;
+      color: #444;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .post {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .post img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .post h2 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .post p {
+      margin-bottom: 10px;
+    }
+
+    .about, .contact {
+      background: white;
+      padding: 40px;
+      margin: 40px 0;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      background-size: cover ;
+    }
+
+    .about h2, .contact h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .contact input, .contact textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact button {
+      padding: 12px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .contact button:hover {
+      background: #ffcc00;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    #topBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 100;
+      font-size: 18px;
+      padding: 12px 16px;
+      border: none;
+      background: #333;
+      color: white;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #topBtn:hover {
+      background: #ffcc00;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌍 My Travel Blog</h1>
+    <p>Exploring the world, one journey at a time</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#blog">Blog</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container" id="destinations">
+    <h2 class="section-title">🌴 Featured Destinations</h2>
+    <div class="posts">
+      <div class="post">
+        <img src="https://picsum.photos/600/400?beach" alt="Bali">
+        <h2>Bali, Indonesia</h2>
+        <p>Bali is a tropical paradise with beautiful beaches, temples, and vibrant culture.</p>
+      </div>
+      <div class="post">
+        <img src="https://picsum.photos/600/400?mountain" alt="Switzerland">
+        <h2>Swiss Alps</h2>
+        <p>Hiking through the Alps is an unforgettable experience with snow-capped peaks and fresh air.</p>
+      </div>
+      <div class="post">
+        <img src="https://picsum.photos/600/400?desert" alt="Dubai">
+        <h2>Dubai Desert</h2>
+        <p>Experience the golden sands and thrilling desert safaris in Dubai’s vast desert.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="blog">
+    <h2 class="section-title">✈ Travel Blog</h2>
+    <div class="posts">
+      <!-- Lots of posts -->
+      <div class="post">
+        <img src="https://picsum.photos/600/400?city" alt="Paris">
+        <h2>My Paris Adventure</h2>
+        <p>From the Eiffel Tower to croissants, Paris was truly magical.</p>
+      </div>
+      <div class="post">
+        <img src="https://picsum.photos/600/400?jungle" alt="Amazon">
+        <h2>Exploring the Amazon</h2>
+        <p>The Amazon rainforest was wild and full of life, an unforgettable trip.</p>
+      </div>
+      <div class="post">
+        <img src="https://picsum.photos/600/400?island" alt="Maldives">
+        <h2>Relaxing in the Maldives</h2>
+        <p>The crystal-clear waters and luxury resorts made it a dream vacation.</p>
+      </div>
+      <div class="post">
+        <img src="https://picsum.photos/600/400?temple" alt="Thailand">
+        <h2>Thailand’s Temples</h2>
+        <p>The stunning temples of Thailand were both peaceful and breathtaking.</p>
+      </div>
+      <div class="post">
+        <img src="https://picsum.photos/600/400?forest" alt="Kenya">
+        <h2>Safari in Kenya</h2>
+        <p>Seeing lions, elephants, and giraffes up close was a life-changing adventure.</p>
+      </div>
+      <div class="post">
+        <img src="https://picsum.photos/600/400?lake" alt="Canada">
+        <h2>Canadian Lakes</h2>
+        <p>The serene lakes of Canada were perfect for relaxation and reflection.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container about" id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m a travel enthusiast who loves to explore new places, cultures, and cuisines. This blog is where I share my adventures and tips to inspire your next journey.</p>
+  </div>
+
+  <div class="container contact" id="contact">
+    <h2>Contact Me</h2>
+      <p><strong>Email:</strong> nifemiadeogun331@gmail.com</p>
+      <p><strong>Phone:</strong> +234 806 4625 645</p>
+      <p><strong>Address:</strong> Lagos, Nigeria</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Travel Blog | All Rights Reserved</p>
+  </footer>
+
+  <button onclick="topFunction()" id="topBtn">↑</button>
+
+  <script>
+    let topBtn = document.getElementById("topBtn");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

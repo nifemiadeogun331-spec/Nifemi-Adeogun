@@ -1,0 +1,512 @@
+help me fix this code so that my pictures can show '<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f8f9fa url("") no-repeat center center fixed;
+  background-size: cover;
+}
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #333;
+      color: #fff;
+      padding: 15px 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff9800;
+      flex: 1;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+#menu-toggle {
+  display: none; 
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #333;
+  color: #fff;
+  padding: 15px 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff9800;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+nav ul li {
+  margin: 5px 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff9800;
+}
+
+.cart-btn {
+  background: #ff9800;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cart-btn:hover {
+  background: #e68900;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; 
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #444;
+    margin-top: 15px;
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+
+  nav ul li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  #menu-toggle:checked + .menu-icon + ul {
+    display: flex;
+  }
+}
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff9800;
+    }
+
+    .cart-btn {
+      background: #ff9800;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .cart-btn:hover {
+      background: #e68900;
+    }
+    nav{
+      justify-content: center;
+    }
+    nav ul {
+      justify-content: center;
+      width: 100%;
+    }
+    .cart-btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    section {
+      padding: 100px 20px;
+      min-height: 70vh;
+    }
+
+    #home {
+      background: url("IMG-20251202-WA0011.jpg") no-repeat center center/cover;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 60vh;
+    }
+
+    #home h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    #home p {
+      font-size: 1.1rem;
+      background: rgba(0,0,0,0.5);
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 60%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      background: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product h3 {
+      margin: 10px 0;
+    }
+
+    .product button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .product button:hover {
+      background: #ff9800;
+    }
+
+    #about {
+      background: linear-gradient(135deg, #f9f9f9, #eef2f7);
+      padding: 80px 20px;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1100px;
+      margin: auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .about-container img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .about-text {
+      max-width: 550px;
+    }
+
+    .about-text h2 {
+      color: #333;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .about-text ul {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .about-text ul li {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .learn-btn {
+      padding: 10px 20px;
+      background: #ff9800;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .learn-btn:hover {
+      background: #e68900;
+    }
+
+    #contact {
+      background: #f4f4f4;
+      margin-top: 40px;
+    }
+
+    .contact-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info, .contact-form {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      padding: 10px 15px;
+      border: none;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #ff9800;
+    }
+
+.get-in-touch-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #25d366; 
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.get-in-touch-btn:hover {
+  background: #1ebc57;
+  transform: translateY(-3px);
+}
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #ff9800;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="logo">MyShop</div>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">☰</label>
+
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button class="cart-btn">🛒 Cart</button></li>
+  </ul>
+</nav>
+
+  <section id="home">
+    <h1>Welcome to Our Store</h1>
+    <p>Find the best products at amazing prices!</p>
+  </section>
+
+  <section id="shop">
+    <h2>Shop Products</h2>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products...">
+    </div>
+    <div class="products">
+      <div class="product">
+        <img src="IMG-20251202-WA0012.jpg" alt="Wireless Headphones">
+        <h3>Wireless Headphones</h3>
+        <p>$99.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="IMG-20251202-WA0014.jpg" alt="Laptop">
+        <h3>Laptop</h3>
+        <p>$899.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="IMG-20251202-WA0013.jpg" alt="Smartwatch">
+        <h3>Smart Watch</h3>
+        <p>$150.00</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-container">
+     
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>
+          At <strong>MyShop</strong>, we are more than just an online store —  
+          we are a community built on quality, trust, and innovation.
+        </p>
+        <ul>
+          <li>✅ <strong>Our Mission:</strong> To deliver high-quality products at unbeatable prices.</li>
+          <li>🌍 <strong>Our Vision:</strong> To be a global brand known for excellent customer experience.</li>
+          <li>💡 <strong>Our Values:</strong> Integrity, customer satisfaction, and innovation.</li>
+        </ul>
+        <button class="learn-btn">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <p><strong>Email:</strong> nifemiadeogun331@gmail.com</p>
+      <p><strong>Phone:</strong> +234 806 4625 645</p>
+      <p><strong>Address:</strong> Lagos, Nigeria</p>
+    </div>
+
+    <div class="contact-action">
+      <a href="https://wa.me/2348064625645" target="_blank" class="get-in-touch-btn">
+        💬 Get In Touch
+      </a>
+    </div>
+  </div>
+</section>
+  <footer>
+    <p>© 2025 MyShop | Follow us on 
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a>
+    </p>
+  </footer>
+</body>
+</html>
